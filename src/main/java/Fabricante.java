@@ -4,6 +4,15 @@ public class Fabricante {
 	private String nombre;
 	private Pais pais;
 	
+	public Fabricante(String nombre, Pais pais) {
+		this.setNombre(nombre);
+		this.setPais(pais);
+	}
+	
+	public Fabricante() {
+		this("", null);
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
