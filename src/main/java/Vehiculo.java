@@ -1,5 +1,7 @@
 package vehiculos;
 
+import java.util.ArrayList;
+
 public class Vehiculo {
 	private String placa;
 	private int puertas;
@@ -9,6 +11,7 @@ public class Vehiculo {
 	private int peso;
 	private String traccion;
 	private Fabricante fabricante;
+	public static ArrayList<Vehiculo> listadoVehiculos = new ArrayList<Vehiculo>();
 	
 	private static int CantidadVehiculos;
 		
@@ -24,6 +27,7 @@ public class Vehiculo {
 		this.setTraccion(traccion);
 		this.setFabricante(fabricante);
 		
+		listadoVehiculos.add(this);
 		setCantidadVehiculos(getCantidadVehiculos() + 1);
 		
 	}
@@ -103,18 +107,10 @@ public class Vehiculo {
 	}
 	
 	public String vehiculosPorTipo() {
-		return "Automoviles: " + Automovil.cantidadAutomoviles()
-	+ "Camionetas: " + Camioneta.cantidadCamionetas()
-	+ "Camiones: " + Camion.cantidadCamiones()
+		return "Automoviles: " + Automovil.getCantidadAutomoviles()
+	+ "Camionetas: " + Camioneta.getCantidadCamionetas()
+	+ "Camiones: " + Camion.getCantidadCamiones()
 	;
-	}
-	
-	public String paisMasVendedor() {
-		return "";
-	}
-	
-	public String fabricaMayorVentas() {
-		return "";
 	}
 	
 }
